@@ -1,0 +1,36 @@
+
+{% set data = load_setup_py_data() %}
+
+
+package:
+    name    : pmps_test
+
+    version : {{ data.get('version') }}
+
+
+source:
+    path: ..
+
+build:
+    number: 1
+    noarch: python
+
+requirements:
+    build:
+      - python >=3.6
+      - setuptools
+
+    run:
+      - python >=3.6
+
+test:
+    imports:
+      - pmps_test
+
+    requires:
+      - pytest
+
+about:
+  home: https://github.com/pcdshub/pmps_test
+  license: SLAC Open License
+  summary: Verify the functionality of the PMPS system via the ADS interface
