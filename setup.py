@@ -51,7 +51,7 @@ setup(
     url='https://github.com/pcdshub/pmps_test',
     entry_points={
         'console_scripts': [
-            # 'some.module:some_function',
+                "do_test = pmps_test.bin.main:main",
             ],
         },
     include_package_data=True,
