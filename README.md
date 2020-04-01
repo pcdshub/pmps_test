@@ -1,11 +1,7 @@
 # pmps_test
 
-.. image:: https://img.shields.io/travis/pcdshub/pmps_test.svg
-        :target: https://travis-ci.org/pcdshub/pmps_test
-
-.. image:: https://img.shields.io/pypi/v/pmps_test.svg
-        :target: https://pypi.python.org/pypi/pmps_test
-
+[![travis-ci](https://img.shields.io/travis/pcdshub/pmps_test.svg)](https://travis-ci.org/pcdshub/pmps_test)        
+[![pypi](https://img.shields.io/pypi/v/pmps_test.svg)](https://pypi.python.org/pypi/pmps_test)
 
 Verify the functionality of the PMPS system via the ADS interface
 
