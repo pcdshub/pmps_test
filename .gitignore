@@ -104,5 +104,8 @@ ENV/
 *.swp
 *.swo
 
+# Microsoft vscode
+.vscode
+
 # None of the logs 
 /logs/*
