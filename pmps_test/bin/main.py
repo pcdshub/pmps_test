@@ -1,7 +1,6 @@
 import argparse
 import importlib.resources
 import logging
-from pathlib import PurePath
 from textwrap import dedent, fill
 
 import pytest
@@ -30,12 +29,9 @@ def main(args=None):
 
     # unknown_args are not recognized by argparse and will be sent to pytest
     args, unknown_args = top_parser.parse_known_args(args)
-    print(args)
-    print(unknown_args)
-    with importlib.resources.path(pmps_test.pmps,".") as p:
+
+    with importlib.resources.path(pmps_test.pmps, ".") as p:
         pmps_test_root_dir = p
-    
-    print(pmps_test_root_dir)
 
     pytest_args = [
         f"{pmps_test_root_dir}",
