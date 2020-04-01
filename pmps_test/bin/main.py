@@ -35,7 +35,9 @@ def main(args=None):
     pmps_test_root_dir = PurePath(PurePath(pmps_test.pmps.__file__).parent)
 
     pytest_args = [
-        "--pyargs",
+        #"-p",
+        #"pmps_test_pmps",
+        #"--pyargs",
         f"{pmps_test_root_dir}",
         "--cmdopt=90",
     ] + unknown_args

@@ -53,6 +53,9 @@ setup(
         'console_scripts': [
                 "do_test = pmps_test.bin.main:main",
             ],
+        'pytest11': [
+            "pmps_test_pmps = pmps_test.pmps.plugin"
+        ]
         },
     include_package_data=True,
     package_data={
