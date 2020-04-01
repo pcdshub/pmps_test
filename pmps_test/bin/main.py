@@ -1,4 +1,5 @@
 import argparse
+import importlib.resources
 import logging
 from pathlib import PurePath
 from textwrap import dedent, fill
@@ -31,13 +32,12 @@ def main(args=None):
     args, unknown_args = top_parser.parse_known_args(args)
     print(args)
     print(unknown_args)
-
-    pmps_test_root_dir = PurePath(PurePath(pmps_test.pmps.__file__).parent)
+    with importlib.resources.path(pmps_test.pmps,".") as p:
+        pmps_test_root_dir = p
+    
+    print(pmps_test_root_dir)
 
     pytest_args = [
-        #"-p",
-        #"pmps_test_pmps",
-        #"--pyargs",
         f"{pmps_test_root_dir}",
         "--cmdopt=90",
     ] + unknown_args
