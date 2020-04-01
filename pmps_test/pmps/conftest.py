@@ -1,6 +1,7 @@
 import pytest
 
 AMS_NET_ID_OPTION = "--ams_net_id"
+CMDOPT_OPTION = "--cmdopt"
 
 
 def pytest_load_initial_conftests(args, early_config, parser):
@@ -15,11 +16,11 @@ def pytest_addoption(parser):
     """
     parser.addoption(
         AMS_NET_ID_OPTION, action="store", default=False,
-        help="pytest argument"
+        help="Example argument passed via command line"
     )
     parser.addoption(
-        "--cmdopt", action="store", default="type1",
-        help="my option: type1 or type2"
+        CMDOPT_OPTION, action="store", default="type1",
+        help="Example argument passed programmatically"
     )
 
 
@@ -34,4 +35,4 @@ def ams_net_id(request):
 
 @pytest.fixture
 def cmdopt(request):
-    return request.config.getoption("--cmdopt")
+    return request.config.getoption(CMDOPT_OPTION)

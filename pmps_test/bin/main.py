@@ -6,7 +6,7 @@ from textwrap import dedent, fill
 import pytest
 
 import pmps_test
-from ..pmps.conftest import AMS_NET_ID_OPTION
+from ..pmps.conftest import AMS_NET_ID_OPTION, CMDOPT_OPTION
 import pmps_test.pmps
 
 logger = logging.getLogger(__name__)
@@ -24,9 +24,7 @@ def main(args=None):
         prog="pmps_test",
         description=DESCRIPTION,
     )
-
-    top_parser.add_argument(AMS_NET_ID_OPTION, type=str)
-
+    
     # unknown_args are not recognized by argparse and will be sent to pytest
     args, unknown_args = top_parser.parse_known_args(args)
 
@@ -35,7 +33,7 @@ def main(args=None):
 
     pytest_args = [
         f"{pmps_test_root_dir}",
-        "--cmdopt=90",
+        f"{CMDOPT_OPTION}=90",
     ] + unknown_args
     pytest_plugins = None
 
