@@ -19,6 +19,8 @@ DESCRIPTION = fill(dedent("""
     pytest.
     """)).strip()
 
+#def pytest_addoption
+
 def main(args=None):
 
     top_parser = argparse.ArgumentParser(
@@ -33,19 +35,14 @@ def main(args=None):
     print(args)
     print(unknown_args)
 
-    conf_test_file = PurePath(PurePath(pmps_test.pmps.__file__).parent)   
-
+    
+    pmps_test_root_dir = PurePath(PurePath(pmps_test.pmps.__file__).parent)
     pytest_args = [
         "--pyargs",
-        "pmps_test.pmps",
-        "--trace-config",
-        f"--confcutdir={conf_test_file}",
-        #f"{AMS_NET_ID_OPTION}={args.ams_net_id}"
-        #"--cmdopt=2",
-    ]
-    #] + unknown_args
-
-    pytest_plugins = []
+        f"{pmps_test_root_dir}",
+        "--cmdopt=90",
+    ] + unknown_args
+    pytest_plugins = None
 
     pytest.main(
         args=pytest_args,
