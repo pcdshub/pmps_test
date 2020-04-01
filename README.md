@@ -1,6 +1,4 @@
-===============================
-pmps_test
-===============================
+# pmps_test
 
 .. image:: https://img.shields.io/travis/pcdshub/pmps_test.svg
         :target: https://travis-ci.org/pcdshub/pmps_test
@@ -11,31 +9,45 @@ pmps_test
 
 Verify the functionality of the PMPS system via the ADS interface
 
-Documentation
--------------
+## Dev Usage
+
+After installing run the following command to see the basic tests:
+
+`do_test`
+
+To see an example of passing a parameter to the tests at runtime, run the following command:
+
+`do_test --ams_net_id 127.0.0.1.1.1`
+
+To see an example of a parameter passed to pytest programmatically, see the use of CMDOPT_OPTION in `pmps_test/pmps/main.py`.
+
+## Documentation
 
 Sphinx-generated documentation for this project can be found here:
 https://pcdshub.github.io/pmps_test/
 
 
-Requirements
-------------
+## Requirements
 
-Describe the project requirements (i.e. Python version, packages and how to install them)
+From the main pmps_test directory run the following command to install the requirements:
 
-Installation
-------------
+`pip install -r requirements.txt`
 
-Describe the installation procedure
+From the main pmps_test directory run the following command to install the development requirements:
 
-Running the Tests
------------------
-::
+`pip install -r dev-requirements.txt`
 
-  $ python run_tests.py
+## Installation
+
+From the main pmps_test directory run the following to install pmps_test in your virtual environment:
+
+`pip install -e .`
+
+## Running the Tests
+
+`python run_tests.py`
    
-Directory Structure
--------------------
+## Directory Structure
 
 This repo is based the PCDS python cookiecutter. See the following github page for more info:
 
