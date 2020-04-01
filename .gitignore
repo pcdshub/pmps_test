@@ -102,6 +102,7 @@ ENV/
 
 # vim swap files
 *.swp
+*.swo
 
 # None of the logs 
 /logs/*
