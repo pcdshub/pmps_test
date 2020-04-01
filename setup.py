@@ -46,7 +46,7 @@ setup(
     license='BSD',
     author='SLAC National Accelerator Laboratory',
     packages=find_packages(exclude=['docs', 'tests']),
-    description='Verify the functionality of the PMPS system via the ADS interface',
+    description='Verify the functionality of the PMPS system via ADS',
     long_description=readme,
     url='https://github.com/pcdshub/pmps_test',
     entry_points={
