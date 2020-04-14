@@ -22,7 +22,7 @@ pip install --upgrade pip
 
 here = path.abspath(path.dirname(__file__))
 
-with open(path.join(here, 'README.rst'), encoding='utf-8') as readme_file:
+with open(path.join(here, 'README.md'), encoding='utf-8') as readme_file:
     readme = readme_file.read()
 
 with open(path.join(here, 'requirements.txt')) as requirements_file:
@@ -51,7 +51,7 @@ setup(
     url='https://github.com/pcdshub/pmps_test',
     entry_points={
         'console_scripts': [
-                "do_test = pmps_test.bin.main:main",
+                "pmps_run_tests = pmps_test.bin.main:main",
             ],
         },
     include_package_data=True,

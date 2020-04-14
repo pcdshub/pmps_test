@@ -9,11 +9,11 @@ Verify the functionality of the PMPS system via the ADS interface
 
 After installing run the following command to see the basic tests:
 
-`do_test`
+`pmps_run_tests`
 
 To see an example of passing a parameter to the tests at runtime, run the following command:
 
-`do_test --ams_net_id 127.0.0.1.1.1`
+`pmps_run_tests --ams_net_id 127.0.0.1.1.1`
 
 To see an example of a parameter passed to pytest programmatically, see the use of CMDOPT_OPTION in `pmps_test/pmps/main.py`.
 
